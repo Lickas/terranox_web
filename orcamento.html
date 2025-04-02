@@ -156,7 +156,7 @@
                                 <div class="col-12">
                                     <div class="form-floating">
                                         <textarea class="form-control border-0" placeholder="Descreva o serviço que precisa" id="message" name="mensagem" style="height: 100px"></textarea>
-                                        <label for="message">Mensagem (Se possível inclua detalhes importantes como a área do terreno, plano, tipo de vegetação, localização e outros pormenores relevantes para a nossa orientação.)</label>
+                                        <label for="message" id="message-label">Mensagem (Se possível inclua detalhes importantes como a área do terreno, plano, tipo de vegetação, localização e outros pormenores relevantes para a nossa orientação.)</label>
                                     </div>
                                 </div>
                                 <div class="col-12 text-center">
@@ -296,6 +296,17 @@
                 messageDiv.innerHTML = 'Ocorreu um erro ao enviar o formulário. Por favor, verifique a sua conexão e tente novamente.';
             }
         });
+    </script>
+
+    <script>
+    document.getElementById('message').addEventListener('input', function() {
+        const label = document.getElementById('message-label');
+        if (this.value.length > 0) {
+            label.textContent = 'Mensagem';
+        } else {
+            label.textContent = 'Mensagem (Se possível inclua detalhes importantes como a área do terreno, plano, tipo de vegetação, localização e outros pormenores relevantes para a nossa orientação.)';
+        }
+    });
     </script>
 
 <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">

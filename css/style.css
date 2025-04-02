@@ -788,3 +788,24 @@ h6,
         font-size: 14px; /* Reduz o tamanho da fonte do texto no mobile */
     }
 }
+
+
+
+
+/* Estilo padrão para desktop */
+.form-floating textarea#message {
+    height: 100px; /* Mantém o valor inline original */
+}
+
+/* Ajuste para mobile */
+@media (max-width: 768px) { /* 768px é um breakpoint comum para tablets e celulares */
+    .form-floating textarea#message {
+        height: 250px; /* Aumenta a altura no mobile */
+    }
+}
+
+/* Opcional: ajustar o label para evitar sobreposição */
+.form-floating > label {
+    font-size: 12px; /* Reduz o tamanho da fonte se necessário */
+    line-height: 1.2; /* Melhora a legibilidade */
+}
