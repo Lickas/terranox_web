@@ -27,16 +27,23 @@
     
     
     // Back to top button
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
-            $('.back-to-top').fadeIn('slow');
-        } else {
-            $('.back-to-top').fadeOut('slow');
-        }
-    });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-        return false;
+    $(document).ready(function() {
+        // Mostrar/esconder o botão "back-to-top" ao rolar
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 300) {
+                $('.back-to-top').fadeIn();
+            } else {
+                $('.back-to-top').fadeOut();
+            }
+        });
+
+        // Rolagem suave ao clicar no botão "back-to-top"
+        $('.back-to-top').click(function(e) {
+            e.preventDefault(); // Impede o comportamento padrão do link
+            $('html, body').animate({
+                scrollTop: 0
+            }, 600); // Tempo de rolagem ajustado para 600ms (0.6 segundos)
+        });
     });
 
 
