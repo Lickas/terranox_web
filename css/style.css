@@ -759,3 +759,32 @@ h6,
         display: none !important; /* Esconde a seta em telas grandes */
     }
 }
+
+
+
+
+
+
+
+
+
+
+/* Ajustes para a seção Top Feature no mobile */
+@media (max-width: 767.98px) {
+    .top-feature .bg-white {
+        padding: 20px !important; /* Ajusta o padding em todas as direções no mobile */
+    }
+
+    .top-feature .ps-3 {
+        padding-left: 15px !important; /* Ajusta o padding à esquerda do texto */
+        padding-right: 15px !important; /* Adiciona padding à direita para evitar que o texto cole na borda */
+    }
+
+    .top-feature h4 {
+        font-size: 18px; /* Reduz o tamanho da fonte do título no mobile */
+    }
+
+    .top-feature span {
+        font-size: 14px; /* Reduz o tamanho da fonte do texto no mobile */
+    }
+}
