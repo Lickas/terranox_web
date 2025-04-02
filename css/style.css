@@ -677,3 +677,85 @@ h6,
     border-radius: 10px; /* Mantém o arredondamento das bordas */
 }
 
+
+/* Ajustes para a topbar */
+.topbar {
+    font-size: 14px; /* Tamanho da fonte para melhor legibilidade */
+}
+
+/* Contêiner principal da topbar */
+.topbar-content {
+    position: relative;
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa o contêiner */
+}
+
+/* Contêiner dos itens da topbar */
+.topbar-items {
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Impede que os itens quebrem a linha */
+}
+
+/* Esconde o "Segue-nos:" na versão desktop dentro de topbar-items */
+@media (min-width: 992px) {
+    .topbar-items .social-mobile {
+        display: none !important; /* Esconde o "Segue-nos:" na versão desktop */
+    }
+}
+
+/* Rolagem horizontal em telas pequenas */
+@media (max-width: 991.98px) {
+    .topbar-items {
+        overflow-x: auto; /* Permite rolagem horizontal */
+        -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos iOS */
+        scrollbar-width: none; /* Esconde a barra de rolagem no Firefox */
+    }
+
+    .topbar-items::-webkit-scrollbar {
+        display: none; /* Esconde a barra de rolagem no Chrome/Safari */
+    }
+
+    .topbar .px-3 {
+        padding-left: 10px !important; /* Reduz o padding em telas pequenas */
+        padding-right: 10px !important;
+    }
+}
+
+/* Estilo da seta indicadora */
+.topbar-scroll-indicator {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: blink 1.5s infinite; /* Animação de piscar */
+}
+
+/* Animação de piscar para a seta */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* Ajustes para telas grandes */
+@media (min-width: 992px) {
+    .topbar-items {
+        justify-content: flex-start; /* Alinha os itens à esquerda */
+        width: 100%;
+        overflow-x: hidden !important; /* Desativa a rolagem */
+    }
+
+    .topbar-scroll-indicator {
+        display: none !important; /* Esconde a seta em telas grandes */
+    }
+}
