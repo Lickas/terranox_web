@@ -809,72 +809,41 @@ h6,
     font-size: 12px; /* Reduz o tamanho da fonte se necessário */
     line-height: 1.2; /* Melhora a legibilidade */
 }
-
-
-/* ====================== GALLERY STYLES ====================== */
-
-/* Container dos itens do carousel */
+/*** Gallery ***/
 .gallery-carousel .gallery-item {
-    padding: 8px; /* espaçamento entre as imagens */
+    padding: 0 10px;
 }
 
-.gallery-carousel .position-relative {
-    height: 280px;           /* Altura fixa desejada - podes alterar (ex: 300px, 320px) */
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.gallery-carousel .position-relative:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Imagem dentro do item - tamanho igual + crop inteligente */
-.gallery-carousel .position-relative img {
+.gallery-carousel .gallery-img {
+    height: 300px;
+    object-fit: cover;
     width: 100%;
-    height: 100%;
-    object-fit: cover;        /* Mantém proporção e preenche o espaço */
-    object-position: center;  /* Centraliza a imagem */
-    transition: transform 0.4s ease;
 }
 
-.gallery-carousel .position-relative:hover img {
-    transform: scale(1.08);
+.gallery-carousel .owl-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-/* Cursor pointer para indicar que é clicável */
-.gallery-carousel .gallery-item {
-    cursor: pointer;
-}
-
-/* Responsividade da altura */
-@media (max-width: 768px) {
-    .gallery-carousel .position-relative {
-        height: 220px;
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery-carousel .position-relative {
-        height: 200px;
-    }
-}
-
-/* Estilo opcional para o Owl Carousel */
-.owl-carousel.gallery-carousel .owl-stage-outer {
-    padding: 10px 0;
-}
-
-.owl-carousel.gallery-carousel .owl-nav button {
-    background: rgba(0, 0, 0, 0.6) !important;
-    color: #fff !important;
+.gallery-carousel .owl-nav .owl-prev,
+.gallery-carousel .owl-nav .owl-next {
+    margin: 0 10px;
     width: 45px;
     height: 45px;
-    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    background: #FFFFFF;
+    border: 1px solid var(--primary);
+    border-radius: 45px;
+    font-size: 22px;
+    transition: .5s;
 }
 
-.owl-carousel.gallery-carousel .owl-nav button:hover {
-    background: #007bff !important;
+.gallery-carousel .owl-nav .owl-prev:hover,
+.gallery-carousel .owl-nav .owl-next:hover {
+    background: var(--primary);
+    color: #FFFFFF;
 }
