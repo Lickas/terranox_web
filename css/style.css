@@ -227,7 +227,27 @@ h6,
 /*** Facts & Quote ***/
 .facts,
 .quote {
+    position: relative;
+    /* The background color is now handled by the ::before pseudo-element
+       to avoid conflicts with parallax scripts on mobile devices. */
+}
+
+.facts::before,
+.quote::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(15, 66, 41, .6);
+    z-index: 1;
+}
+
+.facts > *,
+.quote > * {
+    position: relative;
+    z-index: 2;
 }
 
 
